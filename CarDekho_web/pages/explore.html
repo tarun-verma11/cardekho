@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CarDekho_web/style/explore.css">
+    <title>Featured Cars</title>
+</head>
+
+<body>
+    <!-- Cars Section -->
+    <div class="featured">
+        <h2>Featured Cars</h2>
+        <div class="featured-cars" id="car-container">
+            <!-- Content will be dynamically loaded here -->
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <a href="#" class="page-link" data-page="1">1</a>
+            <a href="#" class="page-link" data-page="2">2</a>
+            <a href="#" class="page-link" data-page="3">3</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pageLinks = document.querySelectorAll('.page-link');
+            const carContainer = document.getElementById('car-container');
+
+            // Function to load content into the car container
+            function loadPage(page) {
+                fetch(`/CarDekho_web/pages/cars_page${page}.html`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! Status: ${response.status}`);
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        carContainer.innerHTML = data; // Update the container with fetched content
+                        updatePagination(page);
+                    })
+                    .catch(error => {
+                        carContainer.innerHTML = "<p>Error loading content. Please try again later.</p>";
+                        console.error('Error loading content:', error);
+                    });
+            }
+
+            // Update pagination active state
+            function updatePagination(activePage) {
+                pageLinks.forEach(link => {
+                    const page = link.getAttribute('data-page');
+                    if (page === activePage) {
+                        link.classList.add('active');
+                        link.setAttribute('aria-current', 'page');
+                    } else {
+                        link.classList.remove('active');
+                        link.removeAttribute('aria-current');
+                    }
+                });
+            }
+
+            // Event listener for pagination links
+            pageLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const page = link.getAttribute('data-page');
+                    if (page) {
+                        loadPage(page);
+                    }
+                });
+            });
+
+            // Load the default page (Page 1)
+            loadPage("1");
+        });
+    </script>
+</body>
+
+</html>

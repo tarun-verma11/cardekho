@@ -1,0 +1,351 @@
+/* Basic reset and global styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #110e0e;
+    /* font-size: calc(5px + 0.4vw); */
+}
+
+/* logo */
+
+
+/* Car Categories */
+.categories {
+    text-align: center;
+    padding: 50px 20px;
+    /* background-color: #f4f4f4; */
+    --bkg: #5eb3fd;
+    --white: #e7e6e6;
+    background-color: var(--white);
+    /* background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png"); */
+    background-image: url(/images/bmw.jpg);
+    background-repeat: no-repeat; 
+    height: 30vh;
+}
+.categories {
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.categories a {
+    text-decoration: none;
+    color: black;
+}
+
+.categories h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+
+}
+
+.categories ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.categories ul li {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+}
+
+.categories ul li:hover {
+    transform: translateY(-10px);
+    background-color: #333;
+    color: #fff;
+}
+
+/* Featured Cars */
+.featured {
+    text-align: center;
+    padding: 50px 20px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.featured h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+}
+
+.featured-car {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-car:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.featured-cars {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.featured-car {
+    width: 250px;
+    height: 350px;
+    /* background-color: #fff; */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.25);
+    filter: drop-shadow(0 30px 10px rgba(0,0,0,0.125));
+}
+
+.featured-car img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.featured-car h3 {
+    font-size: 1.2em;
+    margin: 10px;
+    color: #fff;
+}
+
+.featured-car p {
+    font-size: 1em;
+    margin: 10px;
+    color: white;
+}
+
+/* Explore More Button */
+
+
+
+.Explore_button {
+    display: inline-block; /* inline block for padding */
+    background-color: #000;
+    color: rgba(0, 212, 255, 0.9);
+    border: 1px solid rgba(0, 212, 255, 0.6);
+    border-radius: 25px; 
+    padding: 12px 20px; 
+    text-align: center;
+    text-decoration: none; 
+    transition: background-color 0.3s, transform 0.3s;
+    margin-left: 45%;
+    margin-bottom: 30px;
+}
+.Explore_button:hover {
+    background-color:rgba(0, 212, 255, 0.9);
+    color: #fff;
+    transform: scale(1.04); 
+}
+
+/* above the footer */
+
+/* .cta {
+    text-align: center;
+    padding: 50px 20px;
+     background-color: #1a73e8;
+    color: white;
+
+   
+} */
+
+.cta h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* .cta button {
+    padding: 12px 30px;
+    font-size: 1.2em;
+    background-color: #fff;
+    color: #1a73e8;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.cta button:hover {
+    background-color: #f4f4f4;
+} */
+
+/* Footer */
+/* footer {
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    color: white;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+
+} */
+
+/* footer */
+
+footer {
+    background-color: black;
+    color: #fff;
+    padding: 20px 0;
+    text-align: left;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-info,
+.footer-links,
+.footer-social {
+    width: 30%;
+}
+
+.footer-info h3,
+.footer-links h3,
+.footer-social h3 {
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 5px 0;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-social {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-icon {
+    color: #fff;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-to-top {
+    color: #fff;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.back-to-top:hover {
+    text-decoration: underline;
+}
+
+.footer-social {
+    background-color: black;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    margin: auto;
+    /* Center the footer */
+}
+
+.footer-social h3 {
+    margin-bottom: 15px;
+}
+
+.footer-social a {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    /* Space between links */
+}
+
+.footer-social img {
+    width: 24px;
+    height: 24px;
+    margin-left: 8px;
+    vertical-align: middle;
+    /* Align icon with text */
+}
+
+@media (max-width: 600px) {
+    .footer-social {
+        padding: 15px;
+    }
+
+    .footer-social img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* detail button */
+
+.button-wrapper {
+    margin-top: 18px;
+}
+
+.btn {
+    border: none;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 12px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.btn+.btn {
+    margin-left: 10px;
+}
+
+.outline {
+    background: transparent;
+    color: rgba(0, 212, 255, 0.9);
+    border: 1px solid rgba(0, 212, 255, 0.6);
+    transition: all .3s ease;
+
+}
+
+.outline:hover {
+    /* transform: scale(1.125); */
+    color: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 255, 255, 0.9);
+    transition: all .3s ease;
+}
